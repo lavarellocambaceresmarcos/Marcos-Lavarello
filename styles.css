@@ -544,19 +544,20 @@ header {
   width: 100%;
   justify-content: space-between;
 }
-.tech-count-container span {
+.tech-count-container .text-dec {
   font-size: 12px;
   font-weight: 200;
 }
-
-.tech-count-container p {
-  font-weight: 600;
-  color: var(--dark-color);
+.cent-and-text-cont {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 20px;
+}
+.tech-count-container .cent {
+  font-weight: 600;
+  color: var(--dark-color);
 }
 .show-animate span.HTML5 {
   animation: hundred 3s forwards;
