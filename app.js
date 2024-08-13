@@ -70,17 +70,6 @@ window.onscroll = function (e) {
     globeIcon.style.boxShadow = "0 0 5px black"
 
 
-    // leftPhone.style.transform = "translatex(-30px)"
-    // leftPhone.style.transition = "all .5s ease"
-
-    // rightPhone.style.transform = "translatex(30px)"
-    // rightPhone.style.transition = "all .5s ease"
-
-
-    // phoneContainer.style.transform = "translateY(-80px)"
-    // phoneContainer.style.transition = "all .5s ease"
-
-
     positionText.style.transform = "translatex(-80px)"
     positionText.style.transition = "all 1s ease"
 
@@ -90,12 +79,6 @@ window.onscroll = function (e) {
 
     globeIcon.style.transform = "rotate(0deg)"
     globeIcon.style.boxShadow = "0 0 5px transparent"
-
-    // leftPhone.style.transform = "translatex(0px)"
-
-    // rightPhone.style.transform = "translatex(0px)"
-
-    // phoneContainer.style.transform = "translateY(0px)"
 
     positionText.style.transform = "translatex(0px)"
 
@@ -157,7 +140,7 @@ for(let i in galleryBox){
 
 
 
-// ABOUT ME CURSOR ANIMATION
+// ABOUT ME SPHERE ANIMATION
 (function () {
 
   const link = document.querySelectorAll('div > .hover-this');
@@ -198,8 +181,8 @@ for(let i=0; i< button.length; i++){
   
     gsap.to(button, {
   
-      x:(mousePosX - boundingRect.width / 10) * 0.1,
-      y:(mousePosY - boundingRect.height / 10) * 0.01,
+      x:(mousePosX - boundingRect.width ) * 0.1,
+      y:(mousePosY - boundingRect.height ) * 0.01,
       duration:0.8,
       ease:'power3.out'
   
