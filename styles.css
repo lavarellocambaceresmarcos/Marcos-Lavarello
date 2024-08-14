@@ -256,9 +256,12 @@ header {
 .work-meth-cont {
   margin-bottom: 40px;
 }
-.work-meth-cont h2 {
+.work-meth-cont h2, .referals-title h2{
   font-size: 55px;
   font-weight: 500;
+}
+.referals-title h2 {
+  margin-top: 50px;
 }
 .work-meth-cont hr {
   height: 2px;
