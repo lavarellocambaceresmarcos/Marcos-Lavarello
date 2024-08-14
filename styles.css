@@ -442,8 +442,7 @@ header {
 
 .location-container i.globe-icon:hover {
   background-color:#73A3F0;
-  transform: translateY(-10px);
-  box-shadow: 0 0 10px rgba(137, 137, 137, 0.327);
+  box-shadow: 0 0 10px rgba(137, 137, 137, 0.135);
 }
 
 /* current position styles */
