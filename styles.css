@@ -44,12 +44,24 @@ header {
     max-width: 1600px;
     transition: all .5s ease;
 }
+.beta-nav ul li a {
+  color: var(--dark-color);
+}
 
+.beta-nav .logo-container svg path {
+  fill: var(--dark-color);
+}
 /* on scroll nav effects */
 .scrolling-nav {
     box-shadow: 0 0 10px black;
     background-color: var(--dark-color);
     backdrop-filter: blur(8px);
+}
+.scrolling-nav ul li a {
+  color: var(--white-color);
+}
+.scrolling-nav .logo-container svg path {
+    fill: var(--white-color);
 }
 .scrolling-nav .nav-cv-button {
   background-color: var(--gray);
@@ -64,8 +76,6 @@ header {
     text-decoration: none;
     font-size: 16px;
 }
-
-
 
 .nav-cv-button {
     background-color: var(--dark-color);
@@ -198,7 +208,187 @@ header {
 
 /************************* MAIN SECTION/BODY OF THE PAGE ************************/
 
-/*--- HERO SECTION STYLES ---*/
+
+
+/* HERO SECTION STYLES - About page */
+
+.about-main {
+  padding: 0 40px;
+}
+.hero-section-about {
+  padding-top: 200px;
+}
+.main-about-title h1 {
+  font-size: 100px;
+  font-weight: 200;
+}
+.main-about-title p {
+  font-size: 50px;
+  text-transform: uppercase;
+  filter: opacity(.5);
+}
+.about-picture-line-container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-picture-line-container hr {
+  height: 2px;
+  background-color: var(--dark-color);
+  border: none;
+  width: 100%;
+}
+.about-picture-line-container img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+  position: absolute;
+  right: 10%;
+  top: -50%;
+}
+
+/* About main content styles */
+
+.work-meth-cont {
+  margin-bottom: 40px;
+}
+.work-meth-cont h2 {
+  font-size: 55px;
+  font-weight: 500;
+}
+.work-meth-cont hr {
+  height: 2px;
+  background-color: var(--dark-color);
+  border: none;
+  width: 100%;
+}
+
+.about-sec-title-cont {
+    margin-top: 100px;
+}
+
+.wordking-process-steps {
+  display: flex;
+  justify-content: space-between;
+}
+.step {
+  margin: 10px;
+  width: 30%;
+  position: relative;
+}
+.title-box {
+  display: flex;
+  align-items: flex-end;
+  transform: translateX(20px);
+}
+
+.title-box span {
+  font-size: 45px;
+  transform: translateY(35px);
+}
+
+.title-box h4 {
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.step-desciption {
+  margin-top: 50px;
+}
+.top-compbox-content a {
+  color: var(--dark-color);
+  transform: rotate(-35deg);
+  font-size: 25px;
+}
+.companys-exp-boxes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.company-box {
+ margin-bottom: 50px;
+ width: 80%;
+}
+.top-compbox-content, .date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin:15px 0;
+}
+.company-box .logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 50px;
+  position: relative;
+}
+.company-box .logo-container hr {
+  background-color: var(--dark-color);
+  width: 100%;
+  height: 1px;
+  border: none;
+  margin-left: 20px;
+}
+.company-box .logo-container img {
+  width: 200px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  transform: translateX(20px);
+}
+.career-text-desc {
+  font-size: 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+
+
+.referals-main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.referal-box {
+  width: 380px;
+  margin: 20px 0;
+}
+.name-and-desc p{
+  width: 200px;
+}
+
+.name-and-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.referal-main-content {
+  display: flex;
+  justify-content: space-between;
+}
+.referal-main-content img{
+  width: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.referal-main-content a {
+  display: flex;
+  align-items: flex-end;
+  color: var(--dark-color);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.referal-box hr {
+  margin-top: 20px;
+}
+/*--- HERO SECTION STYLES - Home page ---*/
 
 .hero-section {
   background: url(./media/background-image-hero.png);
@@ -488,7 +678,7 @@ header {
 }
 
 .mvp-project-box h4 {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 100;
   transition: all .5s ease-in-out;
 }
@@ -631,7 +821,7 @@ header {
   box-shadow: 0  0 10px rgba(131, 131, 131, 0.574);
   margin: 10px;
   border-radius: 2px;
-  width: 400px;
+  width: 350px;
   object-fit: cover;
   padding: 30px;
   background-color: #4e4e4e50;
@@ -711,7 +901,7 @@ footer hr {
   transform: translateY(-10px);
 }
 .copy-right {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.525);
   width: 100%;
   height: 100px;
   display: flex;
@@ -722,9 +912,7 @@ footer hr {
 .social {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   margin-top: 200px;
-  /* background-color: red; */
 }
 .social li {
   transition: all .5s ease;
