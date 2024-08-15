@@ -262,6 +262,7 @@ header {
 }
 .referals-title h2 {
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 .work-meth-cont hr {
   height: 2px;
@@ -299,7 +300,12 @@ header {
   font-weight: 400;
   font-size: 20px;
 }
-
+.division-line-bis {
+  border: none;
+  background-color: var(--dark-color);
+  height: 2px;
+  margin-top: 80px;
+}
 .step-desciption {
   margin-top: 50px;
 }
