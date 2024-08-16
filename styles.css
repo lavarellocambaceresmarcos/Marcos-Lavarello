@@ -315,9 +315,16 @@ header {
   font-size: 18px;
 }
 .top-compbox-content a {
+  text-decoration: none;
+  font-size: 10px;
+  color: var(--dark-color);
+  margin-bottom: 10px;
+}
+.top-compbox-content a i {
   color: var(--dark-color);
   transform: rotate(-35deg);
   font-size: 25px;
+  margin-left: 5px;
 }
 .companys-exp-boxes {
   display: flex;
@@ -336,6 +343,7 @@ header {
 }
 .top-compbox-content {
   margin-bottom: 30px;
+  padding: 20px;
 }
 .top-compbox-content, .date-container {
   display: flex;
