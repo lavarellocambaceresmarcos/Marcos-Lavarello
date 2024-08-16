@@ -18,8 +18,6 @@ document.querySelector(".hamburger_menu_button").addEventListener("click", () =>
 //***** Scrolling navbar *****//
 
 let stickyNavbar = document.querySelector('#main-nav');
-let sections = document.querySelectorAll('.main-skills_container');
-
 
 document.addEventListener('scroll', () => {
 
@@ -29,17 +27,6 @@ document.addEventListener('scroll', () => {
     stickyNavbar.classList.remove('scrolling-nav')
   }
 
-  sections.forEach(sec => {
-    let top = window.scrollY;
-
-    if (top >= 2000) {
-      sec.classList.add('show-animate')
-    }
-
-    // else{
-    //     sec.classList.remove('show-animate')
-    // }
-  })
 })
 
 
@@ -52,9 +39,6 @@ window.onscroll = function (e) {
 
   let locationCont = document.getElementsByClassName('location-container')[0];
   let globeIcon = document.getElementsByClassName('globe-icon')[0];
-  let leftPhone = document.getElementsByClassName('left-phone')[0];
-  let rightPhone = document.getElementsByClassName('right-phone')[0];
-  let phoneContainer = document.getElementsByClassName('mobiles-container')[0];
   let positionText = document.getElementsByClassName('position-text')[0];
 
   if (oldScrollY < window.scrollY) {

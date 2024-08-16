@@ -23,7 +23,6 @@ body{
     max-width: 1600px;
     overflow-x: hidden;
     margin: 0 auto;
-    background-color: var(--white-color);
     color: var(--dark-color);
 }
 
@@ -147,7 +146,7 @@ header {
   transform: translateX(0);
 }
 .main-logo {
-  height: 70px;
+  height: 50px;
 }
 
 /* styles and querys related to the hamburguer menu button */
@@ -557,6 +556,112 @@ header {
   font-weight: 500;
 }
 
+
+
+
+/* contact main content */
+
+
+.contact-main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 200px 0;
+  background: rgb(0 0 0 / 83%);
+}
+
+.contact-main-section {
+ 
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-form {
+  margin-right: 100px;
+}
+.contact-profile-section {
+  display: flex;
+  flex-direction: column;
+}
+.contact-profile-section i {
+ color: var(--white-color);
+ margin: 40px 0;
+ font-size: 30px;
+ /* background-color: red; */
+ width: max-content;
+transform: rotate(45deg);
+}
+.contact-profile-section img {
+  height: 120px;
+  width: 120px;
+}
+.cont-form h1 {
+  font-size: 90px;
+  font-weight: 400;
+  color: var(--white-color);
+}
+.cont-labels {
+  margin-bottom: 80px;
+}
+
+.cont-form form {
+  margin-top: 100px;
+}
+form .cont-labels input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  width: 100%;
+  color: var(--gray);
+  margin-top: 50px;
+  font-size: 18px;
+}
+form .cont-labels input:focus {
+  outline: none;
+}
+form .cont-labels label {
+  color: var(--white-color);
+  font-size: 24px;
+  font-weight: 100;
+}
+form .cont-labels label span {
+  font-size: 15px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.right-info-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact-info-section {
+  margin: 40px 0;
+}
+
+.contact-info-section ul {
+  list-style: none;
+}
+
+.contact-info-section h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #787777;
+}
+.contact-info-section li {
+  margin: 20px 0;
+  color: var(--white-color);
+}
+.contact-info-section a {
+  font-weight: 300;
+  color: var(--white-color);
+  margin: 10px 0;
+  text-decoration: none;
+}
+
 /* About section styles*/
 .about-container {
   display: flex;
@@ -595,7 +700,8 @@ header {
   justify-content: center;
   align-items: center;
   transition: all .5s ease-in-out;
-  
+  background: #73A3F0;
+  box-shadow: 0 0 20px #4e4e4e78;
 }
 
 
@@ -703,102 +809,6 @@ header {
   align-items: center;
 }
 
-/* Skills bars section */
-.main-skills_container {
-  margin-top: 100px;
-}
-.main-skills_container ul {
-  list-style: none;
-}
-.main-skills_container ul h5 {
-  font-weight: 200;
-  font-size: 30px;
-}
-.main-skills_container li {
-  margin: 40px 0;
-}
-.charge-bar {
-  cursor: pointer;
-  background: #353b4811;
-  display: block;
-  height: 40px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all .3s cubic-bezier(.25,.8,.25,1);
-}
-
-.charge-bar span {
-  
-  height: 40px;
-  float: left;
-  width: 0;
-  background: linear-gradient(235deg, #1a1b1b7b, #0b0b0b94);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.12), 0 10px 10px rgba(0,0,0,0.24);
-}
-
-.tech-count-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-.tech-count-container .text-dec {
-  font-size: 12px;
-  font-weight: 200;
-}
-.cent-and-text-cont {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
-.tech-count-container .cent {
-  font-weight: 600;
-  color: var(--dark-color);
-}
-.show-animate span.HTML5 {
-  animation: hundred 3s forwards;
-}
-
-.show-animate span.JavaScript, .show-animate span.Figma {
-  animation: ninety 3s forwards;
-}
-
-.show-animate span.React,.show-animate span.Wordpress {
-  animation: fourty 3s forwards;
-}
-
-.show-animate span.HubSpot, .show-animate span.GIT,.show-animate span.Adobe {
-  animation: eighty 3s forwards;
-}
-
-@keyframes fourty {
-  100%{
-    width: 40%;
-  }
-}
-@keyframes seventy {
-  100%{
-    width: 70%;
-  }
-}
-@keyframes eighty {
-  100%{
-    width: 80%;
-  }
-}
-@keyframes ninety {
-  100%{
-    width: 90%;
-  }
-}
-@keyframes hundred {
-  100%{
-    width: 100%;
-  }
-}
-
 /* Media creativities gallery */
 .media-main-container {
   margin-top: 120px;
@@ -836,7 +846,13 @@ header {
 }
 
 /************************* FOOTER STYLES ************************/
-
+.contact-footer {
+  padding: 0;
+  margin: 0;
+}
+.contact-footer .copy-right {
+  margin: 0;
+}
 footer {
   padding-top:50px;
   background-color: var(--dark-color);
