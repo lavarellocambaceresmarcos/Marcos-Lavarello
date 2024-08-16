@@ -63,8 +63,8 @@ header {
     fill: var(--white-color);
 }
 .scrolling-nav .nav-cv-button {
-  background-color: var(--gray);
-  color: var(--dark-color);
+  background-color: #73A3F0;
+  color: var(--white-color);
   box-shadow: 0 0 10px rgba(137, 137, 137, 0.327);
 }
 /* end scroll nav effects */
@@ -150,7 +150,7 @@ header {
 }
 
 /* styles and querys related to the hamburguer menu button */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 798px) {
 
     .hamburger_menu_button {
         display: flex;
@@ -180,6 +180,7 @@ header {
         width: 100%;
         height: 100vh;
         transition: all .5s ease;
+        background-color: var(--dark-color);
       }
       .nav_links.open {
       transform: translateX(-200vw);
@@ -191,7 +192,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        background-color: var(--white-color);
+        transform: translateY(20px);
         width: 100%;
         height: 100%;
     }
@@ -200,6 +201,10 @@ header {
     .nav_links ul li{
         margin: 0;
         margin-bottom: 20px;
+    }
+
+    .nav-cv-button {
+      background-color: #73A3F0;
     }
 }
 
@@ -260,7 +265,7 @@ header {
   font-weight: 500;
 }
 .referals-title h2 {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 .work-meth-cont hr {
@@ -307,6 +312,7 @@ header {
 }
 .step-desciption {
   margin-top: 50px;
+  font-size: 18px;
 }
 .top-compbox-content a {
   color: var(--dark-color);
@@ -320,19 +326,28 @@ header {
 }
 .company-box {
  margin-bottom: 50px;
- width: 80%;
+ width: 100%;
+}
+
+.companys-info-container {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-compbox-content {
+  margin-bottom: 30px;
 }
 .top-compbox-content, .date-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin:15px 0;
+  /* margin:15px 0; */
 }
 .company-box .logo-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 50px;
+  max-height: 80px;
   position: relative;
 }
 .company-box .logo-container hr {
@@ -344,15 +359,15 @@ header {
 }
 .company-box .logo-container img {
   width: 200px;
-  position: absolute;
+  /* position: absolute;
   bottom: 20px;
   left: 0;
-  transform: translateX(20px);
+  transform: translateX(20px); */
 }
 .career-text-desc {
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 20px;
-  width: 80%;
+  width: 100%;
 }
 
 
@@ -611,6 +626,12 @@ transform: rotate(45deg);
 .cont-form form {
   margin-top: 100px;
 }
+
+form .hover-this{
+  border: none;
+    background: transparent;
+    color: var(--white-color);
+}
 form .cont-labels input {
   background: transparent;
   border: none;
@@ -685,10 +706,14 @@ form .cont-labels label span {
   align-items: center;
   justify-content: center;
 }
-
+.subit-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .sphere-wrapper{
   z-index: 1;
+  width: max-content;
 }
 .sphere-wrapper div {
   height: 200px;
@@ -744,7 +769,7 @@ form .cont-labels label span {
 .secondary-circle {
   height: 300px;
   width: 300px;
-  background-color: var(--gray);
+  background-color:var(--dark-color);
   border-radius: 50%;
   transform: translate(-60px,-60px);
 }
