@@ -35,43 +35,46 @@ document.addEventListener('scroll', () => {
 let oldScrollY = window.scrollY;
 let directionText = document.getElementById('hero-section-zone');
 
-window.onscroll = function (e) {
-
-  let locationCont = document.getElementsByClassName('location-container')[0];
-  let globeIcon = document.getElementsByClassName('globe-icon')[0];
-  let positionText = document.getElementsByClassName('position-text')[0];
-
-  if (oldScrollY < window.scrollY) {
-
-    console.log('Down')
-
-    locationCont.style.width = "200px"
-    locationCont.style.transition = "all .5s ease"
+let homePage = document.getElementById('home-body');
 
 
-    globeIcon.style.transform = "rotate(45deg)"
-    globeIcon.style.transition = "all .5s ease"
-    globeIcon.style.boxShadow = "0 0 5px black"
-
-
-    positionText.style.transform = "translatex(-80px)"
-    positionText.style.transition = "all 1s ease"
-
-  } else {
-
-    locationCont.style.width = "170px"
-
-    globeIcon.style.transform = "rotate(0deg)"
-    globeIcon.style.boxShadow = "0 0 5px transparent"
-
-    positionText.style.transform = "translatex(0px)"
-
-    console.log('Up')
-
-
+  window.onscroll = function (e) {
+    if(homePage){
+    let locationCont = document.getElementsByClassName('location-container')[0];
+    let globeIcon = document.getElementsByClassName('globe-icon')[0];
+    let positionText = document.getElementsByClassName('position-text')[0];
+  
+    if (oldScrollY < window.scrollY) {
+  
+      console.log('Down')
+  
+      locationCont.style.width = "200px"
+      locationCont.style.transition = "all .5s ease"
+  
+      globeIcon.style.transform = "rotate(45deg)"
+      globeIcon.style.transition = "all .5s ease"
+      globeIcon.style.boxShadow = "0 0 5px black"
+  
+      positionText.style.transform = "translatex(-80px)"
+      positionText.style.transition = "all 1s ease"
+  
+    } else {
+  
+      locationCont.style.width = "170px"
+  
+      globeIcon.style.transform = "rotate(0deg)"
+      globeIcon.style.boxShadow = "0 0 5px transparent"
+  
+      positionText.style.transform = "translatex(0px)"
+  
+      console.log('Up')
+    }
+    oldScrollY = window.scrollY;
   }
-  oldScrollY = window.scrollY;
-}
+  }
+  
+
+
 
 
 // GALLERY SCROLL SCRIPT ANIMATION && HEADING TEXT SCROLL SCRIPT ANIMATION
@@ -84,6 +87,8 @@ const mainBoxOne = document.getElementById('mainBoxOne');
 const mainBoxTwo = document.getElementById('mainBoxOneTwo');
 const mainBoxHeading = document.getElementById('mainBoxHeading');
 
+
+
 for(let i in galleryBox){
 
   let targetScrollTwo = -(
@@ -92,13 +97,11 @@ for(let i in galleryBox){
   let currentScrollTwo = targetScrollTwo;
   
   const animateGallery = () => {
-    const overflowHeight = galleryBox[i].clientHeight - mainBox[i].clientHeight;
-  
-    document.body.style.height = `${overflowHeight + window.innerHeight}px`;
   
     targetScrollTwo = -(
       document.documentElement.scrollTop || document.body.scrollTop
     );
+
     currentScrollTwo += (targetScrollTwo - currentScrollTwo) * 0.1;
     
     foldsContentTwo.forEach(content => {
@@ -112,8 +115,7 @@ for(let i in galleryBox){
       if(content.parentElement == mainBoxHeading){
         content.style.transform = `translateX(${-currentScrollTwo}px)`;
       }
-
-      
+   
     });
   
     requestAnimationFrame(animateGallery);

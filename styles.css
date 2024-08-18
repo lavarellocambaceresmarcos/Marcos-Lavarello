@@ -5,10 +5,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
 
 :root {
-    --dark-color: #4E4E4E;
+    --dark-color: #242323;
     --white-color: #FCFCFC;
     --gray:#D9D9D9;
 }
+
+/* Loading screen */
+.loading-screen {
+  background-color: var(--dark-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scrollUp .4s linear forwards;
+  animation-delay: 1.5s;
+}
+.loading-screen p {
+  animation: TextscrollUp 3s linear forwards;
+}
+
+.loading-screen p{
+  font-size: 40px;
+}
+@keyframes TextscrollUp {
+  0%{
+      transform: translateY(0%);
+  }
+  100%{
+      transform: translateY(-100%);
+      border-bottom-left-radius: 90%;
+      border-bottom-right-radius: 90%;
+  }
+}
+@keyframes scrollUp {
+  0%{
+      transform: translateY(0%);
+  }
+  100%{
+      transform: translateY(-100%);
+      border-bottom-left-radius: 90%;
+      border-bottom-right-radius: 90%;
+  }
+}
+
 
 *{
     box-sizing: border-box;
@@ -23,7 +68,18 @@ body{
     max-width: 1600px;
     overflow-x: hidden;
     margin: 0 auto;
-    color: var(--dark-color);
+    color: var(--dark-color); 
+}
+main {
+  transform: translateY(10%);
+  animation: scrollUpBody .4s linear forwards;
+  animation-delay: 1.4s;
+}
+
+@keyframes scrollUpBody {
+  100%{
+      transform: translateY(0%);
+  }
 }
 
 * p {
@@ -42,6 +98,7 @@ header {
     position: fixed;
     max-width: 1600px;
     transition: all .5s ease;
+    top: 0;
 }
 .beta-nav ul li a {
   color: var(--dark-color);
@@ -211,11 +268,13 @@ header {
 
 
 /************************* MAIN SECTION/BODY OF THE PAGE ************************/
-
+main {
+  z-index: 1;
+  position: relative;
+}
 
 
 /* HERO SECTION STYLES - About page */
-
 .about-main {
   padding: 0 40px;
 }
@@ -683,12 +742,14 @@ form .cont-labels label span {
 .contact-info-section li {
   margin: 20px 0;
   color: var(--white-color);
+  width: max-content;
 }
 .contact-info-section a {
   font-weight: 300;
   color: var(--white-color);
   margin: 10px 0;
   text-decoration: none;
+  
 }
 
 /* About section styles*/
@@ -896,8 +957,17 @@ footer {
   align-items: center;
   justify-content: center;
   position: relative;
+  /* transition: all 0s ease; */
 }
-
+.animated-footer {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-width: 1600px;
+}
+main {
+  background-color: var(--white-color);
+}
 .footer-sphere-container{
   position: absolute;
   right: 10%;
