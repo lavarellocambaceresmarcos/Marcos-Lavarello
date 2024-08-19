@@ -48,22 +48,16 @@ let homePage = document.getElementById('home-body');
   
       console.log('Down')
   
-      locationCont.style.width = "200px"
+      locationCont.style.width = "230px"
       locationCont.style.transition = "all .5s ease"
   
-      globeIcon.style.transform = "rotate(45deg)"
-      globeIcon.style.transition = "all .5s ease"
-      globeIcon.style.boxShadow = "0 0 5px black"
   
       positionText.style.transform = "translatex(-80px)"
       positionText.style.transition = "all 1s ease"
   
     } else {
   
-      locationCont.style.width = "170px"
-  
-      globeIcon.style.transform = "rotate(0deg)"
-      globeIcon.style.boxShadow = "0 0 5px transparent"
+      locationCont.style.width = "210px"
   
       positionText.style.transform = "translatex(0px)"
   
