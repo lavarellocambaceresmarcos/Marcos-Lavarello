@@ -435,9 +435,9 @@ main {
 
 
 .referals-main-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
 }
 .referal-box {
   width: 380px;
@@ -527,8 +527,8 @@ main {
 
 .cont-principal {
   transition: all 1s ease;
-  transform: rotate(35deg) translate(-10px,8px);
-  padding: 20px;
+  transform: rotate(25deg) translate(-10px,6px);
+  padding: 15px;
   background-color: var(--dark-color);
   border-radius: 50%;
 }
@@ -592,7 +592,7 @@ main {
   transition: all 1.5s ease;
   transform-style: preserve-3d;
   cursor: pointer;
-  border: 2px solid var(--white-color);
+  border: 1px solid var(--white-color);
 }
 .c-one-bis {
  position: absolute;
@@ -1209,4 +1209,17 @@ footer hr {
   z-index: 99999999; /* so that it stays on top of all other elements */
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.237);
   filter: opacity(.6);
+}
+
+
+/* Media querys */
+@media screen and (max-width: 1300px) {
+  .referals-main-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 900px) {
+  .referals-main-container {
+    grid-template-columns: 1fr;
+  }
 }
