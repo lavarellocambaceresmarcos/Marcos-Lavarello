@@ -6,9 +6,12 @@ document.querySelector(".hamburger_menu_button").addEventListener("click", () =>
     const menu = document.querySelector(".hamburger_menu_button");
     menu.classList.toggle("open");
     document.querySelector(".nav_links").classList.toggle("open");
+    // document.querySelector(".logo").classList.toggle("light-logo");
+
   } else {
     document.querySelector(".hamburger_menu_button").classList.remove("open");
     document.querySelector(".nav_links").classList.remove("open");
+    // document.querySelector(".logo").classList.remove("light-logo");
   }
 
 
@@ -28,47 +31,6 @@ document.addEventListener('scroll', () => {
   }
 
 })
-
-
-
-// ANIMATIONS ON SCROLL - HEADING OF THE PAGE
-let oldScrollY = window.scrollY;
-let directionText = document.getElementById('hero-section-zone');
-
-let homePage = document.getElementById('home-body');
-
-
-  window.onscroll = function (e) {
-    if(homePage){
-    let locationCont = document.getElementsByClassName('location-container')[0];
-    let globeIcon = document.getElementsByClassName('globe-icon')[0];
-    let positionText = document.getElementsByClassName('position-text')[0];
-  
-    if (oldScrollY < window.scrollY) {
-  
-      console.log('Down')
-  
-      locationCont.style.width = "230px"
-      locationCont.style.transition = "all .5s ease"
-  
-  
-      positionText.style.transform = "translatex(-80px)"
-      positionText.style.transition = "all 1s ease"
-  
-    } else {
-  
-      locationCont.style.width = "210px"
-  
-      positionText.style.transform = "translatex(0px)"
-  
-      console.log('Up')
-    }
-    oldScrollY = window.scrollY;
-  }
-  }
-  
-
-
 
 
 // GALLERY SCROLL SCRIPT ANIMATION && HEADING TEXT SCROLL SCRIPT ANIMATION
@@ -120,76 +82,13 @@ for(let i in galleryBox){
 
 
 
-// ABOUT ME SPHERE ANIMATION
-(function () {
-
-  const link = document.querySelectorAll('div > .hover-this');
-
-  const animateit = function (e) {
-        const span = this.querySelector('.moving-frame');
-        const { offsetX: x, offsetY: y } = e,
-        { offsetWidth: width, offsetHeight: height } = this,
-
-        move = 25,
-        xMove = x / width * (move * 2) - move,
-        yMove = y / height * (move * 2) - move;
-
-        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-
-        if (e.type === 'mouseleave') span.style.transform = '';
-  };
-
-
-  link.forEach(b => b.addEventListener('mousemove', animateit));
-  link.forEach(b => b.addEventListener('mouseleave', animateit));
-
-})();
-
-const button = document.getElementsByClassName('sphere-wrapper');
-
-for(let i=0; i< button.length; i++){
-
-  let boundingRect = button[i].getBoundingClientRect();
-
-  window.addEventListener('resize', ()=>{
-    boundingRect = button[i].getBoundingClientRect();
-  })
-
-  button[i].addEventListener('mousemove', (e)=>{
-    const mousePosX = e.pageX - boundingRect.left;
-    const mousePosY = e.pageY - boundingRect.top;
-  
-    gsap.to(button, {
-  
-      x:(mousePosX - boundingRect.width ) * 0.1,
-      y:(mousePosY - boundingRect.height ) * 0.01,
-      duration:0.8,
-      ease:'power3.out'
-  
-    })
-  })
-  button[i].addEventListener('mouseleave', ()=>{
-    gsap.to(button[i], {
-  
-      x:0,
-      y:0,
-      duration:0.8,
-      ease:'elastic.out(1,0.3)'
-  
-    })
-  })
-}
-
-
-
-
 // CURSOR ANIMATION
 
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
 const colors = [
-  "#73A3F0",
+  "#242323",
   
 ];
 
@@ -228,3 +127,75 @@ function animateCircles() {
 }
 
 animateCircles();
+
+
+
+// tabs JS
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          const targetTab = this.getAttribute('data-tab');
+
+          // Remove 'active' class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => {
+              content.classList.remove('active');
+              content.style.opacity = 0;  // Start fading out
+          });
+
+          // Add 'active' class to the clicked button
+          this.classList.add('active');
+          
+          // Show and fade in the corresponding content
+          const targetContent = document.getElementById(targetTab);
+          targetContent.classList.add('active');
+
+          // Set a small timeout to trigger the opacity transition
+          setTimeout(() => {
+              targetContent.style.opacity = 1; // Fade-in effect
+          }, 350); // Timeout needed to trigger CSS transition
+      });
+  });
+});
+
+
+// Skill bars animation
+document.getElementById('tab2_button').addEventListener('click', function() {
+
+  document.querySelectorAll('.html').forEach(function(element) {
+    element.style.width = '90%';
+  });
+  
+  document.querySelectorAll('.css').forEach(function(element) {
+    element.style.width = '90%';
+  });
+  
+  document.querySelectorAll('.React').forEach(function(element) {
+    element.style.width = '60%';
+  });
+  
+  document.querySelectorAll('.javascript').forEach(function(element) {
+    element.style.width = '90%';
+  });
+  
+  document.querySelectorAll('.adobe').forEach(function(element) {
+    element.style.width = '80%';
+  });
+  
+  document.querySelectorAll('.wordpress').forEach(function(element) {
+    element.style.width = '70%';
+  });
+  
+  document.querySelectorAll('.ui').forEach(function(element) {
+    element.style.width = '70%';
+  });
+  
+  document.querySelectorAll('.rwd').forEach(function(element) {
+    element.style.width = '80%';
+  });
+});
+
